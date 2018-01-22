@@ -34,6 +34,11 @@ When using TLS, one has to provide additional parameters:
    a single file (you can then just specify the *certificate* parameter and
    leave the *private key* parameter absent).
 
+.. note::
+   Certificates for workers and the scheduler need to have the clientAuth
+   and the serverAuth extended key usage, certificates for the clients just
+   need the clientAuth extended key usage.
+
 It is up to you whether each endpoint uses a different certificate and
 private key, or whether all endpoints share the same, or whether each
 endpoint kind (Client, Scheduler, Worker) gets its own certificate / key pair.
